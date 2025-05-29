@@ -1,0 +1,70 @@
+% used as the wrapper template for authors, this and the SPJ main.tex should include the same packages; the SPJ main.tex includes more stuff for TOC and page number, covers, and front matter
+
+\documentclass[10pt]{article}
+\pagenumbering{arabic} 
+\usepackage[twoside,top=1cm,bottom=4cm,left=2cm,right=2cm,marginparwidth=1.75cm,bindingoffset=0mm]{geometry}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\bibliographystyle{plain}
+\usepackage[english]{babel}
+
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{float} % For [H] placement specifier
+\usepackage{graphicx} % For \resizebox
+\usepackage{xcolor} % For defining colors
+% Define a custom style based on Tango
+\newminted[perlcode]{perl}{
+  style=tango,
+  fontsize=\footnotesize,
+  frame=single,
+  %bgcolor=mybgcolor,
+  breaklines=true,
+  linenos=true,
+  numbersep=10pt
+}
+
+% Pseudo-code for Algorithms
+\usepackage{amsmath} % For mathematical typesetting
+\usepackage{algorithm} % For algorithm environment
+\usepackage{algpseudocode} %
+
+\usepackage{fancyhdr} % BDE: PACKAGE NEEDED TO ADJUST FOOTER FOR PAGE NUMBERS DOWN
+\usepackage{pdfpages}
+%\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{graphicx} % for including graphics
+\usepackage{eso-pic} % for placing content at absolute positions
+\newcounter{insertpages}
+
+% toc SETUP
+\usepackage{titletoc}
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\usepackage{draftwatermark}
+\SetWatermarkText{\textbf{\Large DRAFT}} % Watermark text
+\SetWatermarkScale{3} % Scale of the watermark
+\SetWatermarkColor[gray]{0.9} % Color of the watermark (gray in this case)
+\SetWatermarkAngle{45} % Angle of the watermark
+
+% DEV NOTE, CORRELATION #lat000: attempt to fix "Overfull \hbox" errors on hyphenated words, fixed-width components, etc.
+\setlength{\emergencystretch}{20em}
+
+\renewcommand{\contentsname}{{TABLE OF CONTENTS}}
+
+% \includepdf[pages=-]{author1_paper.pdf}
+
+\title{Proceedings of The Science Perl Journal Conference}
+\author{}
+\date{}
+
+\usepackage{lipsum}
+
+\begin{document}
+% Adjust footer position
+\setlength{\footskip}{50pt} % BDE: ADUST WHERE PAGE NUMBERS ARE, HIGHER NUMBER MOVES IT DOWN
+
+% Include each author's paper as a new section
+\section{Author 3: Paper Title}
+\input{author-paper.tex}
+
+\end{document}

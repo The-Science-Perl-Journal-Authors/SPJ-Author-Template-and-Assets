@@ -1,0 +1,18 @@
+Description of the SPJ Author Template Package
+
+1. AUTHOR-paper.tex
+
+This is YOUR paper's main file, but should not include any package or document information;
+it is meant to be rendered when included in "SPJ-AUTHOR-main.tex".
+
+It will be named based on your name, please do not change it.
+
+2. SPJ-AUTHOR-main.tex
+
+Added for convenience. Everyone will be using the same file in the final publication.
+
+Make sure you (the author) has an updated version of this file from the main project. Your paper must render using it.
+
+It will be provided as working with your main paper template, generally referred to above as "AUTHOR-paper.tex"
+
+This file can be edited, but in order for it to be reflected in the shared file everyone is using you need to contact the editors to propose the change. Be prepared to be able to justify needing whatever changes you wanted.
